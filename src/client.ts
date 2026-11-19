@@ -167,7 +167,7 @@ export class ZillapiClient {
     return res.data;
   }
 
-  /** GET /v1/properties/{zpid}. Full record (300+ fields); use `fields` to project. 1 credit. */
+  /** GET /v1/properties/{zpid}. Full record (200+ fields); use `fields` to project. 1 credit. */
   async getProperty(zpid: string, fields?: string): Promise<Property> {
     return (await this.request<Property>("GET", `/v1/properties/${encodeURIComponent(zpid)}`, { query: { fields } })).data;
   }
