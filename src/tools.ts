@@ -8,7 +8,7 @@ import { tool } from "ai";
 import { z } from "zod";
 import { ZillapiClient, ZillapiError, type SearchRow, type ZillapiClientOptions } from "./client";
 
-/** Fields projected on property lookups so the model gets a compact record instead of 300+ fields. */
+/** Fields projected on property lookups so the model gets a compact record instead of 200+ fields. */
 export const PROPERTY_FIELDS = [
   "zpid",
   "address",

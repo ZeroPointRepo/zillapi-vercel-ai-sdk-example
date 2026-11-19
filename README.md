@@ -31,7 +31,7 @@ Built and tested with `ai@7.0.173` (AI SDK 7), `zod` 4 and Node 22.
 Notes that matter for agents:
 
 - **Search needs a bounding box.** ZillAPI does not accept a bare city name for search. The tool description tells the model to estimate the bbox itself (models are good at this), for example Austin, TX is roughly `{west:-97.94, south:30.10, east:-97.56, north:30.52}`.
-- **Property lookups are projected** with `?fields=` so the model gets about 15 useful fields instead of the full 300+ field record. Edit `PROPERTY_FIELDS` in `src/tools.ts` to add price history, schools, agent contact and more.
+- **Property lookups are projected** with `?fields=` so the model gets about 15 useful fields instead of the full 200+ field record. Edit `PROPERTY_FIELDS` in `src/tools.ts` to add price history, schools, agent contact and more.
 - **Errors go back to the model** as `{ error: { code, message } }` so it can explain or retry instead of crashing the run. 429 and 5xx responses are retried with backoff.
 - Search rows do not always include a Zestimate. The system prompt tells the model to call `getZestimate` for those rows.
 
